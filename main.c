@@ -1,65 +1,83 @@
 #include <stdio.h>
 #include <conio.h>
-main()
+#include <windows.h>
+#include<stdlib.h>
+
+void main()
 {
-	char ch;
-	int choice,a,b,c,d;
-	printf("calculator");
-    printf("comparission");
-    printf("enter your choice");
+    int a,b,c,choice,k,l;
+    float x,y,z;
+    int frac(int);
+    while(1)
+    {
+
+    printf("\n\t\tSelect the option you want to perform from below\n");
+    printf("\n1.Addition\n2.subtraction\n3.multiplication\n4.Division\n5.checking divisibility\n6.comparission\n7.clear screen\n10.exit\n\n\t\t\t\t");
     scanf("%d",&choice);
     switch(choice)
     {
-        case 1:
-           printf("enter choice");
-           scanf("%c",&ch);
-           
-    switch(ch){
-	
-           case'A' : 
-               c=a+b;
-               printf("the addition is %d",c);
-               break;
-           case 'B': 
-		       c=a-b;
-			   Printf("the substraction is %d",c); 
-               break;
-            case 'C': 
-                c=a*b;
-                printf(" the multiplication is %d",c);
-                break;
-            case  'D': 
-                c=a/b;
-                printf("the division is %d",c);
-                break;
-            default:
-            	printf("enter a valid number");
-            	}
-            case 2 :
-            	printf("enter your choice for two or three number");
-      	scanf("%c",&ch);
-      	switch(ch)
-      	{
-            case 'a':
-            	printf("enter two numbers for comparission");
-            	scanf("%d %d",&a,&b);
-            	if(a>b)
-            	{
-            		printf("a is greater");
-				}
-				else
-				{
-					printf("b is greater");
-					break;
-				}
-			case 'b':
-				printf("enter three numbers ");
-				scanf("%d%d%d",&a,&b,&c);
-				d=a>b&&a>c?a:(b>a&&b>c?b:c);
-				printf("the largest number is %d",d);
-			default:
-				printf("enter a valid number");
-				getch();
-	    }
+    case 1:
+        printf("Enter two numbers\n");
+        scanf("%f%f",&x,&y);
+        z=x+y;
+        printf("the sum of %f and %f is %f\n",x,y,z);
+        break;
+    case 2:
+        printf("Enter two numbers\n");
+        scanf("%f%f",&x,&y);
+        printf("the difference of %f and %f is %f\n",x,y,x-y);
+        break;
+    case 3:
+        printf("Enter two numbers\n");
+        scanf("%f%f",&x,&y);
+        printf("The product of %f and %f is %f\n",x,y,x*y);
+        break;
+    case 4:
+        printf("Enter two numbers\n");
+        scanf("%f%f",&x,&y);
+        z=x/y;
+        printf("the answer is %f\n",z);
+        break;
+    case 5:
+        printf("Enter two numbers\n");
+        scanf("%d%d",&a,&b);
+        c=a%b;
+
+        if(c==0)
+        {
+           printf("It is  divisible");
+        }
+        else
+        {
+            printf("It is not fully divisible it will give remainder");
+        }
+
+
+        break;
+
+    case 6:
+        printf("enter two numbers for comparission\n");
+     	scanf("%d%d",&a,&b);
+       	if(a>b)
+       	{
+    		printf("%d is greater",a);
+        }
+		else
+		{
+            printf("%d is greater",b);
+		}
+		break;
+    case 7:
+        system("cls");
+        break;
+
+    case 10: exit(1);
+    default:
+        printf("\nInvalid choice");
     }
+    getch();
+   }
+
 }
+
+
